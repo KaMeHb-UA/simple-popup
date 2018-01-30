@@ -51,6 +51,13 @@
                             popup.style.width = window.innerWidth  - 52;
                             _e.style.maxHeight = window.innerHeight - 94;
                         }
+                        console.log({
+                            "popup.style.maxHeight": popup.style.maxHeight,
+                            "popup.style.top": popup.style.top,
+                            "popup.style.left": popup.style.left,
+                            "popup.style.width": popup.style.width,
+                            "_e.style.maxHeight": _e.style.maxHeight,
+                        });
                     };
                     window.onresize = function(){
                         res.apply(arguments);
