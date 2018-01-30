@@ -40,23 +40,37 @@
                     popup.appendChild(_e);
                     var res = window.onresize || (()=>{}), onr = ()=>{
                         if (window.innerWidth >= 760){
+                            console.log('Needed values: %O', {
+                                "popup.style.maxHeight": window.innerHeight * 0.6,
+                                "popup.style.top": window.innerHeight * 0.2,
+                                "popup.style.left": window.innerWidth * 0.2,
+                                "popup.style.width": (window.innerWidth * 0.6) - 12,
+                                "_e.style.maxHeight": (window.innerHeight * 0.6) - 94
+                            });
                             popup.style.maxHeight = window.innerHeight * 0.6;
                             popup.style.top = window.innerHeight * 0.2;
                             popup.style.left = window.innerWidth * 0.2;
                             popup.style.width = (window.innerWidth * 0.6) - 12;
                             _e.style.maxHeight = (window.innerHeight * 0.6) - 94;
                         } else {
+                            console.log('Needed values: %O', {
+                                "popup.style.maxHeight": window.innerHeight,
+                                "popup.style.top": 0,
+                                "popup.style.left": 0,
+                                "popup.style.width": window.innerWidth  - 52,
+                                "_e.style.maxHeight": window.innerHeight - 94
+                            });
                             popup.style.maxHeight = window.innerHeight;
                             popup.style.top = popup.style.left = 0;
                             popup.style.width = window.innerWidth  - 52;
                             _e.style.maxHeight = window.innerHeight - 94;
                         }
-                        console.log({
+                        console.log('Real values: %O', {
                             "popup.style.maxHeight": popup.style.maxHeight,
                             "popup.style.top": popup.style.top,
                             "popup.style.left": popup.style.left,
                             "popup.style.width": popup.style.width,
-                            "_e.style.maxHeight": _e.style.maxHeight,
+                            "_e.style.maxHeight": _e.style.maxHeight
                         });
                     };
                     window.onresize = function(){
