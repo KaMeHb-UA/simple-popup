@@ -10,8 +10,8 @@
                     var popup = document.createElement('div'),
                         bg = document.createElement('div'),
                         close = document.createElement('button');
-                    popup.style.cssText = 'border: 6px solid #d4d4d4;padding:20px;position:absolute;border-top-width:48px;background-color:white';
-                    bg.style.cssText = 'background-color:rgba(0,0,0,.31);width:9999px;height:9999px;overflow:hidden;position:fixed;top:-4000px;left:-4000px';
+                    popup.style.cssText = 'border:6px solid #d4d4d4;padding:20px;position:absolute;border-top-width:48px;background-color:white;z-index:100';
+                    bg.style.cssText = 'background-color:rgba(0,0,0,.31);width:9999px;height:9999px;overflow:hidden;position:fixed;top:-4000px;left:-4000px;z-index:99';
                     close.style.cssText = 'font-size:20px;background:#d4d4d4;position:absolute;cursor:pointer;right:4px;top:-37px;color:#000;width:2em;border:1px solid #000';
                     body.appendChild(bg);
                     body.appendChild(popup);
@@ -38,7 +38,7 @@
                         popup.parentNode.removeChild(popup);
                     }
                     popup.appendChild(_e);
-                    var res = window.onresize || (()=>{}); onr = ()=>{
+                    var res = window.onresize || (()=>{}), onr = ()=>{
                         if (window.innerWidth >= 760){
                             popup.style.maxHeight = window.innerHeight * 0.6;
                             popup.style.top = window.innerHeight * 0.2;
